@@ -1,7 +1,7 @@
 # 🎬 IMDB Sentiment Analysis – Data Processing & Cleaning
 
-![GitHub stars](https://img.shields.io/github/stars/GSMenon/imdb-sentiment-analysis?style=social)
-![GitHub forks](https://img.shields.io/github/forks/GSMenon/imdb-sentiment-analysis?style=social)
+![GitHub stars](https://img.shields.io/github/stars/GowrishankarSMenon/movie-review-ml-analyzer?style=social)
+![GitHub forks](https://img.shields.io/github/forks/GowrishankarSMenon/movie-review-ml-analyzer?style=social)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > A comprehensive data cleaning and processing pipeline for IMDB movie reviews sentiment analysis.
@@ -12,6 +12,8 @@ This project focuses on cleaning and processing a dataset of IMDB reviews for se
 
 - [Dataset](#-dataset)
 - [Data Cleaning Process](#-data-cleaning-process)
+- [Language Analysis](#-language-analysis)
+- [Model Performance](#-model-performance)
 - [Usage](#-usage)
 - [Project Structure](#-project-structure)
 - [Installation](#-installation)
@@ -28,6 +30,9 @@ The project uses the popular IMDB movie reviews dataset:
   - Balanced dataset with 25,000 positive and 25,000 negative reviews
 
 > **Note**: The CSV files have been removed from version control using `git filter-repo` to reduce repository size. They can be downloaded from the link above.
+
+![Sentiment Distribution](https://github.com/GowrishankarSMenon/movie-review-ml-analyzer/blob/main/images/positive-negative_distribution.png)
+*Figure: Perfectly balanced dataset with equal numbers of positive and negative reviews*
 
 ## 🧹 Data Cleaning Process
 
@@ -49,6 +54,32 @@ The dataset was processed using the following steps:
    - Handled missing values
 
 This makes the data ideal for natural language processing (NLP) tasks.
+
+## 📊 Language Analysis
+
+Analysis of word frequencies in positive and negative reviews reveals interesting patterns:
+
+![Word Frequency Analysis](https://github.com/GowrishankarSMenon/movie-review-ml-analyzer/blob/main/images/positive_and_negative_words.png)
+*Figure: Top 20 most frequent words in positive and negative reviews*
+
+## 📈 Model Performance
+
+The model achieved solid performance metrics on sentiment classification:
+
+- **Accuracy**: 89.22%
+- **Precision**: 0.90 (Negative), 0.88 (Positive)
+- **Recall**: 0.88 (Negative), 0.91 (Positive)
+- **F1-Score**: 0.89 (both classes)
+
+### Live Predictions
+
+The sentiment classification model accurately predicts sentiment from user input:
+
+![Negative Review Prediction](https://github.com/GowrishankarSMenon/movie-review-ml-analyzer/blob/main/images/output-1.png)
+*Figure: Model correctly predicts negative sentiment for a review*
+
+![Positive Review Prediction](https://github.com/GowrishankarSMenon/movie-review-ml-analyzer/blob/main/images/output-2.png)
+*Figure: Model correctly predicts positive sentiment for a review*
 
 ## 🚀 Usage
 
@@ -84,8 +115,14 @@ df.head()
 ├── data/
 │   ├── cleaned_imdb_reviews.csv   # Cleaned data file (not in repo)
 │   └── IMDB Dataset.csv           # Original dataset (not in repo)
+├── images/
+│   ├── output1.png                # Negative review prediction screenshot
+│   ├── output2.png                # Positive review prediction screenshot
+│   ├── output3.png                # Word frequency analysis chart
+│   └── output4.png                # Sentiment distribution chart
 ├── scripts/
-│   └── clean_reviews.py           # Python script used for data cleaning
+│   ├── clean_reviews.py           # Python script used for data cleaning
+│   └── train_model.py             # Script for training the sentiment model
 ├── .gitignore
 └── README.md
 ```
@@ -94,8 +131,8 @@ df.head()
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/GSMenon/imdb-sentiment-analysis.git
-   cd imdb-sentiment-analysis
+   git clone https://github.com/GowrishankarSMenon/movie-review-ml-analyzer.git
+   cd movie-review-ml-analyzer
    ```
 
 2. Set up a virtual environment:
@@ -127,9 +164,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## ✨ Author
 
-Maintained by [Gowrishankar S Menon](https://github.com/GSMenon).
+Maintained by [Gowrishankar S Menon](https://github.com/GowrishankarSMenon).
 
-For questions or collaboration, feel free to [open an issue](https://github.com/GSMenon/imdb-sentiment-analysis/issues) or contact me.
+For questions or collaboration, feel free to [open an issue](https://github.com/GowrishankarSMenon/movie-review-ml-analyzer/issues) or contact me.
 
 ---
 
